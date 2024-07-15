@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>用户中心 - 元宇宙网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FCF;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('file:///C|/大三/项目/background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            color: white;
+            text-align: center;
+        }
+        .nav-container {
+            background-color: #FCF;
+        }
+        .nav-image {
+            display: flex;
+            justify-content: center;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            margin: 0 120px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: calc(100vh - 300px);
+        }
+        .profile, .actions {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 10px solid brown;
+            border-bottom: 5px solid brown;
+            box-sizing: border-box;
+            width: 100%;
+            max-width: 400px;
+            margin: 10px;
+        }
+        .profile h2, .actions h2 {
+            margin: 0 0 10px;
+            color: #333;
+            text-align: center;
+        }
+        .profile p, .actions a {
+            color: #666;
+            text-align: center;
+        }
+        .actions a {
+            display: block;
+            margin: 10px 0;
+            background-color: brown;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+        }
+        .actions a:hover {
+            background-color: #A52A2A;
+        }
+        .nn {
+            background-color: #F9C;
+            height: 60px;
+            display: flex;
+            align-items: center;
+        }
+        .nn a {
+            margin: 0 120px;
+            color: white;
+            text-decoration: none;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-image">
+            <img src="file:///C|/大三/项目/元/元是新闻/背景.jpg" alt="导航栏图片" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <nav>
+            <div class="nn">
+                 <a href="file:///C|/大三/项目/元/元的网站/index.html">首页</a>
+            <a href="file:///C|/大三/项目/元/元的网站/notification.html">通知</a>
+            <a href="file:///C|/大三/项目/元/元的网站/usercenter.html">用户中心</a>
+            <a href="file:///C|/大三/项目/元/元的网站/login.html">登录与注册</a>
+            <a href="file:///C|/大三/项目/元/元的网站/ContactUs.html">联系我们</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="profile">
+            <h2>用户信息</h2>
+            <p>用户名：<span id="profile-username"></span></p>
+            <p>电子邮件：<span id="profile-email"></span></p>
+            <p>注册日期：<span id="profile-date"></span></p>
+            <div class="actions">
+                <a href="#" onclick="editProfile()">修改个人信息</a>
+                <a href="#" onclick="changePassword()">修改密码</a>
+                <a href="#" onclick="viewMessages()">查看消息</a>
+                <a href="#" onclick="logout()">退出登录</a>
+            </div>
+        </div>
+    </div>
+    <script>
+        // 获取本地存储中的用户信息并显示
+        document.getElementById('profile-username').textContent = localStorage.getItem('username');
+        document.getElementById('profile-email').textContent = localStorage.getItem('email');
+        document.getElementById('profile-date').textContent = localStorage.getItem('registeredDate');
+
+        function editProfile() {
+            // 进入编辑个人信息页面
+            let newUsername = prompt("请输入新的用户名", localStorage.getItem('username'));
+            let newEmail = prompt("请输入新的电子邮件", localStorage.getItem('email'));
+
+            if (newUsername !== null && newEmail !== null) {
+                localStorage.setItem('username', newUsername);
+                localStorage.setItem('email', newEmail);
+                alert('个人信息已更新');
+                window.location.reload();
+            }
+        }
+
+        function changePassword() {
+            // 进入修改密码页面
+            let currentPassword = prompt("请输入当前密码");
+            let storedPassword = localStorage.getItem('password');
+
+            if (currentPassword === storedPassword) {
+                let newPassword = prompt("请输入新密码");
+                let confirmPassword = prompt("请确认新密码");
+
+                if (newPassword === confirmPassword) {
+                    localStorage.setItem('password', newPassword);
+                    alert('密码已更新');
+                } else {
+                    alert('两次输入的密码不一致');
+                }
+            } else {
+                alert('当前密码不正确');
+            }
+        }
+
+        function viewMessages() {
+            // 进入查看消息页面
+            alert('进入查看消息页面');
+        }
+
+        function logout() {
+            // 清除本地存储的用户信息
+            localStorage.removeItem('username');
+            localStorage.removeItem('email');
+            localStorage.removeItem('registeredDate');
+            localStorage.removeItem('password');
+            localStorage.removeItem('isLoggedIn');
+
+            // 跳转回登录页面
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>

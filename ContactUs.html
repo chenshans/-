@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>联系我们 - 元宇宙网站</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #FCF;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url('file:///C|/大三/项目/background.jpg') no-repeat center center;
+            background-size: cover;
+            height: 300px;
+            color: white;
+            text-align: center;
+        }
+        .nav-container {
+            background-color: #FCF;
+        }
+        .nav-image {
+            display: flex;
+            justify-content: center;
+        }
+        nav {
+            text-align: center;
+        }
+        nav a {
+            margin: 0 120px;
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .container {
+            padding: 20px;
+        }
+        .contact-form {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            border-left: 10px solid brown;
+            border-bottom: 5px solid brown;
+        }
+        .contact-form h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .contact-form label {
+            display: block;
+            margin: 10px 0 5px;
+            color: #666;
+        }
+        .contact-form input, .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        .contact-form button {
+            background-color: brown;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .contact-form button:hover {
+            background-color: #A52A2A;
+        }
+        .contact-info {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 10px solid brown;
+            border-bottom: 5px solid brown;
+        }
+        .contact-info h2 {
+            margin: 0 0 10px;
+            color: #333;
+        }
+        .contact-info p {
+            margin: 5px 0;
+            color: #666;
+        }
+		.nn {
+    background-color: #F9C;
+    height: 60px; /* 增大导航栏高度 */
+    display: flex;
+    align-items: center; /* 垂直居中 */
+}
+
+.nn a {
+    margin: 0 120px; /* 增大子页链接之间的间距 */
+    color: white;
+    text-decoration: none;
+    font-size: 24px; /* 增大字体 */
+}
+
+    </style>
+</head>
+<body>
+    <div class="nav-container">
+        <div class="nav-image">
+            <img src="file:///C|/大三/项目/元/元是新闻/背景.jpg" alt="导航栏图片" style="width: 100%; height: 100%; object-fit: cover;">
+        </div>
+        <nav>
+            <div class="nn">
+                <a href="file:///C|/大三/项目/元/元的网站/index.html">首页</a>
+            <a href="file:///C|/大三/项目/元/元的网站/notification.html">通知</a>
+            <a href="file:///C|/大三/项目/元/元的网站/usercenter.html">用户中心</a>
+            <a href="file:///C|/大三/项目/元/元的网站/login.html">登录与注册</a>
+            <a href="file:///C|/大三/项目/元/元的网站/ContactUs.html">联系我们</a>
+            </div>
+        </nav>
+    </div>
+    <div class="container">
+        <div class="contact-form">
+            <h2>联系我们</h2>
+            <form>
+                <label for="name">姓名</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">电子邮件</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="message">留言</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+
+                <button type="submit">提交</button>
+            </form>
+        </div>
+        <div class="contact-info">
+            <h2>联系方式</h2>
+            <p>公司名称：元宇宙新闻有限公司</p>
+            <p>地址：天津市西青区宾水西道延长线393天津师范大学</p>
+            <p>电话：16629264625</p>
+            <p>电子邮件：2230090023@stu.tjnu.edu.cn</p>
+        </div>
+    </div>
+</body>
+</html>
